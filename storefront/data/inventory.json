@@ -1,0 +1,482 @@
+[
+  {
+    "sku": "SOF-N001",
+    "storeId": "ST-01",
+    "quantity": 13
+  },
+  {
+    "sku": "SOF-N001",
+    "storeId": "ST-02",
+    "quantity": 13
+  },
+  {
+    "sku": "SOF-N001",
+    "storeId": "ST-03",
+    "quantity": 14
+  },
+  {
+    "sku": "SOF-N001",
+    "storeId": "ST-04",
+    "quantity": 12
+  },
+  {
+    "sku": "SOF-N002",
+    "storeId": "ST-01",
+    "quantity": 0
+  },
+  {
+    "sku": "SOF-N002",
+    "storeId": "ST-02",
+    "quantity": 0
+  },
+  {
+    "sku": "SOF-N002",
+    "storeId": "ST-03",
+    "quantity": 0
+  },
+  {
+    "sku": "SOF-N002",
+    "storeId": "ST-04",
+    "quantity": 2
+  },
+  {
+    "sku": "SOF-N003",
+    "storeId": "ST-01",
+    "quantity": 0
+  },
+  {
+    "sku": "SOF-N003",
+    "storeId": "ST-02",
+    "quantity": 0
+  },
+  {
+    "sku": "SOF-N003",
+    "storeId": "ST-03",
+    "quantity": 0
+  },
+  {
+    "sku": "SOF-N003",
+    "storeId": "ST-04",
+    "quantity": 0
+  },
+  {
+    "sku": "SOF-N004",
+    "storeId": "ST-01",
+    "quantity": 3
+  },
+  {
+    "sku": "SOF-N004",
+    "storeId": "ST-02",
+    "quantity": 3
+  },
+  {
+    "sku": "SOF-N004",
+    "storeId": "ST-03",
+    "quantity": 1
+  },
+  {
+    "sku": "SOF-N004",
+    "storeId": "ST-04",
+    "quantity": 3
+  },
+  {
+    "sku": "TBL-N010",
+    "storeId": "ST-01",
+    "quantity": 0
+  },
+  {
+    "sku": "TBL-N010",
+    "storeId": "ST-02",
+    "quantity": 0
+  },
+  {
+    "sku": "TBL-N010",
+    "storeId": "ST-03",
+    "quantity": 0
+  },
+  {
+    "sku": "TBL-N010",
+    "storeId": "ST-04",
+    "quantity": 3
+  },
+  {
+    "sku": "TBL-N011",
+    "storeId": "ST-01",
+    "quantity": 11
+  },
+  {
+    "sku": "TBL-N011",
+    "storeId": "ST-02",
+    "quantity": 13
+  },
+  {
+    "sku": "TBL-N011",
+    "storeId": "ST-03",
+    "quantity": 6
+  },
+  {
+    "sku": "TBL-N011",
+    "storeId": "ST-04",
+    "quantity": 9
+  },
+  {
+    "sku": "TBL-N012",
+    "storeId": "ST-01",
+    "quantity": 1
+  },
+  {
+    "sku": "TBL-N012",
+    "storeId": "ST-02",
+    "quantity": 0
+  },
+  {
+    "sku": "TBL-N012",
+    "storeId": "ST-03",
+    "quantity": 1
+  },
+  {
+    "sku": "TBL-N012",
+    "storeId": "ST-04",
+    "quantity": 0
+  },
+  {
+    "sku": "TBL-N013",
+    "storeId": "ST-01",
+    "quantity": 0
+  },
+  {
+    "sku": "TBL-N013",
+    "storeId": "ST-02",
+    "quantity": 0
+  },
+  {
+    "sku": "TBL-N013",
+    "storeId": "ST-03",
+    "quantity": 0
+  },
+  {
+    "sku": "TBL-N013",
+    "storeId": "ST-04",
+    "quantity": 0
+  },
+  {
+    "sku": "CHR-N020",
+    "storeId": "ST-01",
+    "quantity": 2
+  },
+  {
+    "sku": "CHR-N020",
+    "storeId": "ST-02",
+    "quantity": 3
+  },
+  {
+    "sku": "CHR-N020",
+    "storeId": "ST-03",
+    "quantity": 1
+  },
+  {
+    "sku": "CHR-N020",
+    "storeId": "ST-04",
+    "quantity": 3
+  },
+  {
+    "sku": "CHR-N021",
+    "storeId": "ST-01",
+    "quantity": 3
+  },
+  {
+    "sku": "CHR-N021",
+    "storeId": "ST-02",
+    "quantity": 0
+  },
+  {
+    "sku": "CHR-N021",
+    "storeId": "ST-03",
+    "quantity": 4
+  },
+  {
+    "sku": "CHR-N021",
+    "storeId": "ST-04",
+    "quantity": 0
+  },
+  {
+    "sku": "CHR-N022",
+    "storeId": "ST-01",
+    "quantity": 7
+  },
+  {
+    "sku": "CHR-N022",
+    "storeId": "ST-02",
+    "quantity": 5
+  },
+  {
+    "sku": "CHR-N022",
+    "storeId": "ST-03",
+    "quantity": 14
+  },
+  {
+    "sku": "CHR-N022",
+    "storeId": "ST-04",
+    "quantity": 6
+  },
+  {
+    "sku": "CHR-N023",
+    "storeId": "ST-01",
+    "quantity": 0
+  },
+  {
+    "sku": "CHR-N023",
+    "storeId": "ST-02",
+    "quantity": 0
+  },
+  {
+    "sku": "CHR-N023",
+    "storeId": "ST-03",
+    "quantity": 1
+  },
+  {
+    "sku": "CHR-N023",
+    "storeId": "ST-04",
+    "quantity": 0
+  },
+  {
+    "sku": "LGT-N030",
+    "storeId": "ST-01",
+    "quantity": 0
+  },
+  {
+    "sku": "LGT-N030",
+    "storeId": "ST-02",
+    "quantity": 0
+  },
+  {
+    "sku": "LGT-N030",
+    "storeId": "ST-03",
+    "quantity": 0
+  },
+  {
+    "sku": "LGT-N030",
+    "storeId": "ST-04",
+    "quantity": 0
+  },
+  {
+    "sku": "LGT-N031",
+    "storeId": "ST-01",
+    "quantity": 2
+  },
+  {
+    "sku": "LGT-N031",
+    "storeId": "ST-02",
+    "quantity": 3
+  },
+  {
+    "sku": "LGT-N031",
+    "storeId": "ST-03",
+    "quantity": 3
+  },
+  {
+    "sku": "LGT-N031",
+    "storeId": "ST-04",
+    "quantity": 2
+  },
+  {
+    "sku": "LGT-N032",
+    "storeId": "ST-01",
+    "quantity": 3
+  },
+  {
+    "sku": "LGT-N032",
+    "storeId": "ST-02",
+    "quantity": 0
+  },
+  {
+    "sku": "LGT-N032",
+    "storeId": "ST-03",
+    "quantity": 4
+  },
+  {
+    "sku": "LGT-N032",
+    "storeId": "ST-04",
+    "quantity": 6
+  },
+  {
+    "sku": "LGT-N033",
+    "storeId": "ST-01",
+    "quantity": 12
+  },
+  {
+    "sku": "LGT-N033",
+    "storeId": "ST-02",
+    "quantity": 10
+  },
+  {
+    "sku": "LGT-N033",
+    "storeId": "ST-03",
+    "quantity": 12
+  },
+  {
+    "sku": "LGT-N033",
+    "storeId": "ST-04",
+    "quantity": 14
+  },
+  {
+    "sku": "STG-N040",
+    "storeId": "ST-01",
+    "quantity": 1
+  },
+  {
+    "sku": "STG-N040",
+    "storeId": "ST-02",
+    "quantity": 1
+  },
+  {
+    "sku": "STG-N040",
+    "storeId": "ST-03",
+    "quantity": 0
+  },
+  {
+    "sku": "STG-N040",
+    "storeId": "ST-04",
+    "quantity": 1
+  },
+  {
+    "sku": "STG-N041",
+    "storeId": "ST-01",
+    "quantity": 0
+  },
+  {
+    "sku": "STG-N041",
+    "storeId": "ST-02",
+    "quantity": 0
+  },
+  {
+    "sku": "STG-N041",
+    "storeId": "ST-03",
+    "quantity": 0
+  },
+  {
+    "sku": "STG-N041",
+    "storeId": "ST-04",
+    "quantity": 0
+  },
+  {
+    "sku": "STG-N042",
+    "storeId": "ST-01",
+    "quantity": 1
+  },
+  {
+    "sku": "STG-N042",
+    "storeId": "ST-02",
+    "quantity": 1
+  },
+  {
+    "sku": "STG-N042",
+    "storeId": "ST-03",
+    "quantity": 2
+  },
+  {
+    "sku": "STG-N042",
+    "storeId": "ST-04",
+    "quantity": 2
+  },
+  {
+    "sku": "STG-N043",
+    "storeId": "ST-01",
+    "quantity": 9
+  },
+  {
+    "sku": "STG-N043",
+    "storeId": "ST-02",
+    "quantity": 4
+  },
+  {
+    "sku": "STG-N043",
+    "storeId": "ST-03",
+    "quantity": 6
+  },
+  {
+    "sku": "STG-N043",
+    "storeId": "ST-04",
+    "quantity": 3
+  },
+  {
+    "sku": "STG-N044",
+    "storeId": "ST-01",
+    "quantity": 6
+  },
+  {
+    "sku": "STG-N044",
+    "storeId": "ST-02",
+    "quantity": 9
+  },
+  {
+    "sku": "STG-N044",
+    "storeId": "ST-03",
+    "quantity": 12
+  },
+  {
+    "sku": "STG-N044",
+    "storeId": "ST-04",
+    "quantity": 7
+  },
+  {
+    "sku": "SOF-N005",
+    "storeId": "ST-01",
+    "quantity": 1
+  },
+  {
+    "sku": "SOF-N005",
+    "storeId": "ST-02",
+    "quantity": 2
+  },
+  {
+    "sku": "SOF-N005",
+    "storeId": "ST-03",
+    "quantity": 0
+  },
+  {
+    "sku": "SOF-N005",
+    "storeId": "ST-04",
+    "quantity": 0
+  },
+  {
+    "sku": "TBL-N014",
+    "storeId": "ST-01",
+    "quantity": 0
+  },
+  {
+    "sku": "TBL-N014",
+    "storeId": "ST-02",
+    "quantity": 0
+  },
+  {
+    "sku": "TBL-N014",
+    "storeId": "ST-03",
+    "quantity": 0
+  },
+  {
+    "sku": "TBL-N014",
+    "storeId": "ST-04",
+    "quantity": 0
+  },
+  {
+    "sku": "CHR-N024",
+    "storeId": "ST-01",
+    "quantity": 1
+  },
+  {
+    "sku": "CHR-N024",
+    "storeId": "ST-02",
+    "quantity": 2
+  },
+  {
+    "sku": "CHR-N024",
+    "storeId": "ST-03",
+    "quantity": 3
+  },
+  {
+    "sku": "CHR-N024",
+    "storeId": "ST-04",
+    "quantity": 1
+  }
+]

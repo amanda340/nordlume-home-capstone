@@ -1,0 +1,242 @@
+[
+  {
+    "sku": "SOF-N001",
+    "name": "Fjord Modular Sofa",
+    "category": "Sofas",
+    "price": 1299,
+    "dimensions": "82\"W x 35\"D x 30\"H (per module: 41\"W)",
+    "description": "A two-module sofa that reconfigures from a straight sofa to an L-shape in under a minute, no tools. Oak legs, stain-resistant weave.",
+    "style": "Scandinavian",
+    "image": "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=800&q=80"
+  },
+  {
+    "sku": "SOF-N002",
+    "name": "Lumi Loveseat",
+    "category": "Sofas",
+    "price": 799,
+    "dimensions": "58\"W x 33\"D x 29\"H",
+    "description": "Compact two-seater built for studio apartments, with a hidden storage compartment under the seat cushions.",
+    "style": "Scandinavian",
+    "image": "https://images.unsplash.com/photo-1540574163026-643ea20ade25?w=800&q=80"
+  },
+  {
+    "sku": "SOF-N003",
+    "name": "Birk Sleeper Sofa",
+    "category": "Sofas",
+    "price": 999,
+    "dimensions": "74\"W x 36\"D x 32\"H (unfolded: 74\"W x 58\"D)",
+    "description": "Sofa by day, queen-size bed by night. Memory-foam mattress folds flat with a single pull.",
+    "style": "Scandinavian",
+    "image": "https://images.unsplash.com/photo-1567016432779-094069958ea5?w=800&q=80"
+  },
+  {
+    "sku": "SOF-N004",
+    "name": "Vika Corner Sectional",
+    "category": "Sofas",
+    "price": 1599,
+    "dimensions": "96\"W x 96\"D x 31\"H",
+    "description": "Modular corner piece with reversible chaise, designed to be split into two standalone sofas later.",
+    "style": "Scandinavian",
+    "image": "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=800&q=80"
+  },
+  {
+    "sku": "TBL-N010",
+    "name": "Alna Extendable Dining Table",
+    "category": "Tables",
+    "price": 549,
+    "dimensions": "47\"-71\"W x 35\"D x 29\"H",
+    "description": "Seats 4, extends to seat 6 with a hidden center leaf stored underneath the tabletop.",
+    "style": "Scandinavian",
+    "image": "https://images.unsplash.com/photo-1617098850624-07a96f9df8a1?w=800&q=80"
+  },
+  {
+    "sku": "TBL-N011",
+    "name": "Myro Nesting Side Tables",
+    "category": "Tables",
+    "price": 179,
+    "dimensions": "Set of 2: 20\"W x 20\"D x 18\"H / 16\"W x 16\"D x 15\"H",
+    "description": "Two tables that nest into the footprint of one, in solid ash.",
+    "style": "Scandinavian",
+    "image": "https://images.unsplash.com/photo-1532372576444-dda954194ad0?w=800&q=80"
+  },
+  {
+    "sku": "TBL-N012",
+    "name": "Kaja Fold-Down Desk",
+    "category": "Tables",
+    "price": 289,
+    "dimensions": "39\"W x 6\"D (folded) / 39\"W x 20\"D (open) x 30\"H",
+    "description": "Wall-mounted desk that folds flat against the wall when not in use, with two integrated shelves.",
+    "style": "Scandinavian",
+    "image": "https://images.unsplash.com/photo-1518455027359-f3f8164ba6bd?w=800&q=80"
+  },
+  {
+    "sku": "TBL-N013",
+    "name": "Solvi Coffee Table",
+    "category": "Tables",
+    "price": 229,
+    "dimensions": "43\"W x 23\"D x 16\"H",
+    "description": "Lift-top coffee table that rises to desk height for laptop work or breakfast in bed... on the sofa.",
+    "style": "Scandinavian",
+    "image": "https://images.unsplash.com/photo-1592078615290-033ee584e267?w=800&q=80"
+  },
+  {
+    "sku": "CHR-N020",
+    "name": "Pilt Accent Chair",
+    "category": "Chairs",
+    "price": 349,
+    "dimensions": "27\"W x 29\"D x 31\"H",
+    "description": "Bouclé-upholstered accent chair with a swivel base, light enough to move room to room.",
+    "style": "Scandinavian",
+    "image": "https://images.unsplash.com/photo-1567538096630-e0c55bd6374c?w=800&q=80"
+  },
+  {
+    "sku": "CHR-N021",
+    "name": "Rono Dining Chair",
+    "category": "Chairs",
+    "price": 129,
+    "dimensions": "19\"W x 21\"D x 32\"H",
+    "description": "Stackable dining chair in bent plywood, four stack to the height of one.",
+    "style": "Scandinavian",
+    "image": "https://images.unsplash.com/photo-1503602642458-232111445657?w=800&q=80"
+  },
+  {
+    "sku": "CHR-N022",
+    "name": "Sten Task Chair",
+    "category": "Chairs",
+    "price": 259,
+    "dimensions": "24\"W x 23\"D x 36\"-40\"H",
+    "description": "Home-office task chair with adjustable lumbar support and a compact footprint for small desks.",
+    "style": "Scandinavian",
+    "image": "https://images.unsplash.com/photo-1505843513577-22bb7d21e455?w=800&q=80"
+  },
+  {
+    "sku": "CHR-N023",
+    "name": "Hagen Folding Chair",
+    "category": "Chairs",
+    "price": 89,
+    "dimensions": "18\"W x 20\"D x 31\"H (folded: 18\"W x 4\"D)",
+    "description": "Folds flat for closet storage, pulled out for guests. Set of two.",
+    "style": "Scandinavian",
+    "image": "https://images.unsplash.com/photo-1519947486511-46149fa0a254?w=800&q=80"
+  },
+  {
+    "sku": "LGT-N030",
+    "name": "Skye Floor Lamp",
+    "category": "Lighting",
+    "price": 159,
+    "dimensions": "14\"W x 14\"D x 62\"H",
+    "description": "Dimmable LED floor lamp with a linen shade and a built-in USB-C charging port in the base.",
+    "style": "Scandinavian",
+    "image": "https://images.unsplash.com/photo-1540932239986-30128078f3c5?w=800&q=80"
+  },
+  {
+    "sku": "LGT-N031",
+    "name": "Tove Pendant Light",
+    "category": "Lighting",
+    "price": 119,
+    "dimensions": "12\"diameter x 10\"H",
+    "description": "Paper-and-rattan pendant shade, adjustable cord length for low ceilings.",
+    "style": "Scandinavian",
+    "image": "https://images.unsplash.com/photo-1540932239986-30128078f3c5?w=800&q=80"
+  },
+  {
+    "sku": "LGT-N032",
+    "name": "Ren Desk Lamp",
+    "category": "Lighting",
+    "price": 69,
+    "dimensions": "6\"W x 10\"D x 16\"H",
+    "description": "Clamp-mount desk lamp, frees up desk surface in small workspaces.",
+    "style": "Scandinavian",
+    "image": "https://images.unsplash.com/photo-1507473885765-e6ed057f782c?w=800&q=80"
+  },
+  {
+    "sku": "LGT-N033",
+    "name": "Isla Table Lamp",
+    "category": "Lighting",
+    "price": 89,
+    "dimensions": "8\"diameter x 18\"H",
+    "description": "Ceramic base table lamp with a warm 2700K bulb included.",
+    "style": "Scandinavian",
+    "image": "https://images.unsplash.com/photo-1524634126442-357e0eac3c14?w=800&q=80"
+  },
+  {
+    "sku": "STG-N040",
+    "name": "Ovra Storage Bench",
+    "category": "Storage",
+    "price": 219,
+    "dimensions": "39\"W x 15\"D x 18\"H",
+    "description": "Entryway bench that doubles as a storage trunk for shoes and seasonal items.",
+    "style": "Scandinavian",
+    "image": "https://images.unsplash.com/photo-1583847268964-b28dc8f51f92?w=800&q=80"
+  },
+  {
+    "sku": "STG-N041",
+    "name": "Kalla Modular Shelving",
+    "category": "Storage",
+    "price": 329,
+    "dimensions": "31\"W x 12\"D x 71\"H (per unit, stackable)",
+    "description": "Open shelving units that stack and bolt together to grow with your space.",
+    "style": "Scandinavian",
+    "image": "https://images.unsplash.com/photo-1594620302200-9a762244a156?w=800&q=80"
+  },
+  {
+    "sku": "STG-N042",
+    "name": "Bru Under-Bed Drawers",
+    "category": "Storage",
+    "price": 99,
+    "dimensions": "Set of 2: 24\"W x 18\"D x 8\"H",
+    "description": "Rolling under-bed storage drawers, reclaims the most underused square footage in a studio.",
+    "style": "Scandinavian",
+    "image": "https://images.unsplash.com/photo-1600121848594-d8644e57abab?w=800&q=80"
+  },
+  {
+    "sku": "STG-N043",
+    "name": "Nord Shoe Cabinet",
+    "category": "Storage",
+    "price": 179,
+    "dimensions": "31\"W x 10\"D x 34\"H",
+    "description": "Slim-profile shoe cabinet designed for narrow entryways, holds up to 12 pairs.",
+    "style": "Scandinavian",
+    "image": "https://images.unsplash.com/photo-1631679706909-1844bbd07221?w=800&q=80"
+  },
+  {
+    "sku": "STG-N044",
+    "name": "Eir Wardrobe",
+    "category": "Storage",
+    "price": 399,
+    "dimensions": "47\"W x 20\"D x 71\"H",
+    "description": "Freestanding wardrobe with sliding doors, no wall mounting required for renters.",
+    "style": "Scandinavian",
+    "image": "https://images.unsplash.com/photo-1631679706909-1844bbd07221?w=800&q=80"
+  },
+  {
+    "sku": "SOF-N005",
+    "name": "Hale Chaise Module",
+    "category": "Sofas",
+    "price": 499,
+    "dimensions": "33\"W x 63\"D x 30\"H",
+    "description": "Standalone chaise module compatible with the Fjord and Vika sofa lines.",
+    "style": "Scandinavian",
+    "image": "https://images.unsplash.com/photo-1540574163026-643ea20ade25?w=800&q=80"
+  },
+  {
+    "sku": "TBL-N014",
+    "name": "Elva Console Table",
+    "category": "Tables",
+    "price": 199,
+    "dimensions": "35\"W x 12\"D x 30\"H",
+    "description": "Slim console table for hallways, with a drop-leaf extension for occasional dining.",
+    "style": "Scandinavian",
+    "image": "https://images.unsplash.com/photo-1532372576444-dda954194ad0?w=800&q=80"
+  },
+  {
+    "sku": "CHR-N024",
+    "name": "Vindel Lounge Chair",
+    "category": "Chairs",
+    "price": 429,
+    "dimensions": "28\"W x 30\"D x 33\"H",
+    "description": "Low-profile lounge chair with a steam-bent oak frame and wool upholstery.",
+    "style": "Scandinavian",
+    "image": "https://images.unsplash.com/photo-1567538096630-e0c55bd6374c?w=800&q=80"
+  }
+]

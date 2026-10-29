@@ -1,0 +1,30 @@
+[
+  {
+    "storeId": "ST-01",
+    "name": "Nordlume Home — Capitol Hill",
+    "address": "412 Broadway E, Seattle, WA 98102",
+    "hours": "Mon-Sat 10am-7pm, Sun 11am-5pm",
+    "phone": "206-555-0110"
+  },
+  {
+    "storeId": "ST-02",
+    "name": "Nordlume Home — Fremont",
+    "address": "3501 Fremont Ave N, Seattle, WA 98103",
+    "hours": "Mon-Sat 10am-7pm, Sun 11am-5pm",
+    "phone": "206-555-0121"
+  },
+  {
+    "storeId": "ST-03",
+    "name": "Nordlume Home — Ballard",
+    "address": "2200 NW Market St, Seattle, WA 98107",
+    "hours": "Mon-Sat 10am-8pm, Sun 11am-6pm",
+    "phone": "206-555-0132"
+  },
+  {
+    "storeId": "ST-04",
+    "name": "Nordlume Home — Bellevue",
+    "address": "10500 NE 8th St, Bellevue, WA 98004",
+    "hours": "Mon-Sun 10am-8pm",
+    "phone": "425-555-0143"
+  }
+]
