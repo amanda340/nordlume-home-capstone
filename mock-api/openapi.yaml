@@ -1,0 +1,124 @@
+openapi: 3.0.3
+info:
+  title: Nordlume Catalog API
+  description: Mock catalog and order-status API for the Nordlume Home Advisor Agent.
+  version: "1.0.0"
+servers:
+  - url: https://REPLACE-WITH-RENDER-URL.onrender.com
+paths:
+  /products:
+    get:
+      operationId: searchProducts
+      summary: Search the product catalog by category and/or free-text query.
+      parameters:
+        - name: category
+          in: query
+          required: false
+          schema:
+            type: string
+        - name: q
+          in: query
+          required: false
+          schema:
+            type: string
+      responses:
+        "200":
+          description: Matching products.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/Product"
+  /products/{sku}:
+    get:
+      operationId: getProductDetails
+      summary: Get details for a single product by SKU.
+      parameters:
+        - name: sku
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: Product found.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Product"
+        "404":
+          description: Product not found.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+  /orders/{orderNumber}/shipments:
+    get:
+      operationId: getOrderShipment
+      summary: Get shipment status and delivery estimate for an order.
+      parameters:
+        - name: orderNumber
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: Shipment found.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Shipment"
+        "404":
+          description: Shipment not found.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+components:
+  schemas:
+    Product:
+      type: object
+      properties:
+        sku:
+          type: string
+        name:
+          type: string
+        category:
+          type: string
+        price:
+          type: number
+        dimensions:
+          type: string
+        description:
+          type: string
+        style:
+          type: string
+    Shipment:
+      type: object
+      properties:
+        orderNumber:
+          type: string
+        status:
+          type: string
+          enum: [PROCESSING, SHIPPED, DELIVERED, BACKORDERED]
+        estimatedDeliveryDate:
+          type: string
+          format: date
+        skus:
+          type: array
+          items:
+            type: string
+    Error:
+      type: object
+      properties:
+        error:
+          type: string
+  securitySchemes:
+    ApiKeyAuth:
+      type: apiKey
+      in: header
+      name: x-api-key
+security:
+  - ApiKeyAuth: []

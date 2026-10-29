@@ -1,0 +1,14 @@
+{
+  "name": "nordlume-mock-api",
+  "version": "1.0.0",
+  "description": "Mock catalog/order-status API for the Nordlume Home Advisor Agent (Agentforce).",
+  "private": true,
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "test": "node --test"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

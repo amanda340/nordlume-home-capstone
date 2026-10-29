@@ -1,0 +1,62 @@
+[
+  {
+    "orderNumber": "NH-1001",
+    "status": "DELIVERED",
+    "estimatedDeliveryDate": "2026-10-20",
+    "skus": ["SOF-N001"]
+  },
+  {
+    "orderNumber": "NH-1002",
+    "status": "SHIPPED",
+    "estimatedDeliveryDate": "2026-11-02",
+    "skus": ["TBL-N013"]
+  },
+  {
+    "orderNumber": "NH-1003",
+    "status": "PROCESSING",
+    "estimatedDeliveryDate": "2026-11-10",
+    "skus": ["CHR-N021"]
+  },
+  {
+    "orderNumber": "NH-1004",
+    "status": "DELIVERED",
+    "estimatedDeliveryDate": "2026-10-15",
+    "skus": ["LGT-N030"]
+  },
+  {
+    "orderNumber": "NH-1005",
+    "status": "SHIPPED",
+    "estimatedDeliveryDate": "2026-11-06",
+    "skus": ["STG-N041"]
+  },
+  {
+    "orderNumber": "NH-1006",
+    "status": "BACKORDERED",
+    "estimatedDeliveryDate": "2026-12-01",
+    "skus": ["TBL-N010"]
+  },
+  {
+    "orderNumber": "NH-1007",
+    "status": "DELIVERED",
+    "estimatedDeliveryDate": "2026-10-22",
+    "skus": ["SOF-N003"]
+  },
+  {
+    "orderNumber": "NH-1008",
+    "status": "SHIPPED",
+    "estimatedDeliveryDate": "2026-11-05",
+    "skus": ["CHR-N024", "LGT-N033"]
+  },
+  {
+    "orderNumber": "NH-1009",
+    "status": "PROCESSING",
+    "estimatedDeliveryDate": "2026-11-12",
+    "skus": ["STG-N043"]
+  },
+  {
+    "orderNumber": "NH-1010",
+    "status": "DELIVERED",
+    "estimatedDeliveryDate": "2026-10-25",
+    "skus": ["SOF-N002"]
+  }
+]
