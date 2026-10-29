@@ -4,7 +4,7 @@ info:
   description: Mock catalog and order-status API for the Nordlume Home Advisor Agent.
   version: "1.0.0"
 servers:
-  - url: https://REPLACE-WITH-RENDER-URL.onrender.com
+  - url: https://nordlume-mock-api.onrender.com
 paths:
   /products:
     get:
