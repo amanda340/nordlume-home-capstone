@@ -1,0 +1,254 @@
+# Home Advisor Agent — Nordlume Home
+# =====================================
+#
+# Service agent (customer-facing, Experience Cloud) for Nordlume Home, a
+# Scandinavian modular-furniture retailer.
+#
+# 2 subagents:
+# - product_inquiry: search the catalog / look up a SKU (no verification needed)
+# - order_status: identity-verification gate, then order status lookup
+#
+# Backend (Apex + External Service) is already deployed. This file only wires
+# Agent Script to the existing targets.
+
+system:
+    instructions: |
+        You are the Nordlume Home Advisor, a customer service assistant for
+        Nordlume Home, a Scandinavian-modern modular-furniture retailer.
+        Be helpful, concise, and warm, with a calm Scandinavian-modern tone.
+        Only describe products, prices, availability, and order details using
+        what your actions actually return. Never invent or guess any of this
+        information.
+    messages:
+        welcome: "Hi, welcome to Nordlume Home! I can help you find products or check an order's status. How can I help today?"
+        error: "Sorry, something went wrong on my end. Let's try that again."
+
+access:
+    default_agent_user: "agentforce_service_agent2.sf4e6prvi7zd.dpanzmiczzcg@orgfarm.salesforce.com.agentdev"
+
+config:
+    developer_name: "Home_Advisor_Agent"
+    agent_label: "Home Advisor Agent"
+    description: "Helps Nordlume Home customers search products, get SKU details, and check order status after identity verification."
+    agent_type: "AgentforceServiceAgent"
+
+variables:
+    EndUserId: linked string
+        source: @MessagingSession.MessagingEndUserId
+        description: "Messaging End User ID"
+    RoutableId: linked string
+        source: @MessagingSession.Id
+        description: "Messaging Session ID"
+    ContactId: linked string
+        source: @MessagingEndUser.ContactId
+        description: "Contact Id of the messaging end user, if already known"
+    verified_contact_id: mutable object = None
+        description: "Contact Id returned by VerifyIdentity once the customer's order number and email match an existing order. None means not yet verified (never attempted, or the most recent attempt found no match). Must only ever be set from VerifyIdentity's result, never from conversation text."
+    active_subagent: mutable string = ""
+        description: "Tracks which subagent the customer is actively mid-flow with (set to 'order_status' on every order_status entry) so the router returns control to it on the next turn instead of re-classifying away from an unfinished flow. Reset to empty on every product_inquiry entry."
+
+language:
+    default_locale: "en_US"
+    additional_locales: ""
+    all_additional_locales: False
+
+start_agent agent_router:
+    label: "Agent Router"
+    description: "Determine whether the customer is asking about products or about an existing order, and route accordingly."
+
+    reasoning:
+        instructions: ->
+            if @variables.active_subagent == "order_status":
+                transition to @subagent.order_status
+            else:
+                | Welcome the customer to Nordlume Home. Decide whether their
+                  request is about products (browsing, searching, prices, SKUs,
+                  availability, catalog) or about an existing order (order
+                  status, shipment, delivery, tracking). Route to the matching
+                  tool. If it's unclear which one they mean, ask one brief
+                  clarifying question before routing.
+
+        actions:
+            to_product_inquiry: @utils.transition to @subagent.product_inquiry
+                description: "Route to product search and SKU lookup"
+            to_order_status: @utils.transition to @subagent.order_status
+                description: "Route to order status and identity verification"
+
+subagent product_inquiry:
+    label: "Product Inquiry"
+    description: "Helps customers search the Nordlume Home catalog by category/keyword or look up a specific product by SKU."
+
+    before_reasoning:
+        set @variables.active_subagent = ""
+
+    actions:
+        search_products:
+            description: "Search the product catalog by category and/or free-text query"
+            target: "externalService://NordlumeCatalogAPI.searchProducts"
+            inputs:
+                category: string
+                    description: "Optional product category to filter by"
+                    is_required: False
+                q: string
+                    description: "Optional free-text search keywords"
+                    is_required: False
+            outputs:
+                "200": list[object]
+                    description: "Matching products, each with sku, name, category, price, dimensions, description, and style"
+                    complex_data_type_name: "@apexClassType/ExternalService__c__NordlumeCatalogAPI_Product?isAuraEnabled=true"
+                    filter_from_agent: False
+                responseCode: integer
+                    description: "HTTP response code returned by the catalog API"
+                    filter_from_agent: True
+                defaultExc: string
+                    description: "Default/error response body when the call fails unexpectedly"
+                    filter_from_agent: True
+
+        get_product_details:
+            description: "Get full details for a single product by its exact SKU"
+            target: "externalService://NordlumeCatalogAPI.getProductDetails"
+            inputs:
+                sku: string
+                    description: "The exact SKU to look up"
+                    is_required: True
+            outputs:
+                "200": object
+                    description: "Product detail (sku, name, category, price, dimensions, description, style) when the SKU exists"
+                    complex_data_type_name: "@apexClassType/ExternalService__c__NordlumeCatalogAPI_Product?isAuraEnabled=true"
+                    filter_from_agent: False
+                responseCode: integer
+                    description: "HTTP response code returned by the catalog API"
+                    filter_from_agent: True
+                "404Exc": object
+                    description: "Returned instead of a product when the SKU does not exist"
+                    complex_data_type_name: "@apexClassType/ExternalService__c__NordlumeCatalogAPI_Error?isAuraEnabled=true"
+                    filter_from_agent: True
+                defaultExc: string
+                    description: "Default/error response body when the call fails unexpectedly"
+                    filter_from_agent: True
+
+    reasoning:
+        instructions: |
+            Help the customer find products in the Nordlume Home catalog.
+            Use search_products when they're browsing by category or
+            keyword, and get_product_details when they give you a specific
+            SKU.
+            Only describe products, prices, descriptions, and availability
+            using data returned by these actions. Never invent or guess
+            product information.
+            If get_product_details does not find the SKU, tell the customer
+            plainly that you couldn't find a product with that SKU, and
+            suggest they double-check it or try a category/keyword search
+            instead. Do not fabricate a product to fill the gap.
+
+        actions:
+            search: @actions.search_products
+                description: "Search products by category and/or keyword"
+                with category = ...
+                with q = ...
+
+            details: @actions.get_product_details
+                description: "Look up a product by its exact SKU"
+                with sku = ...
+
+            to_order_status: @utils.transition to @subagent.order_status
+                description: "Switch to help with an order status question instead"
+
+subagent order_status:
+    label: "Order Status"
+    description: "Verifies a customer's identity, then reports order status. GetOrderStatus is only reachable after VerifyIdentity succeeds."
+
+    before_reasoning:
+        set @variables.active_subagent = "order_status"
+
+    actions:
+        verify_identity:
+            description: "Verify the customer's identity using their order number and the email on the order"
+            target: "apex://VerifyIdentity"
+            inputs:
+                orderNumber: string
+                    description: "The order number provided by the customer"
+                    is_required: True
+                email: string
+                    description: "The email address provided by the customer"
+                    is_required: True
+            outputs:
+                verifiedContactId: object
+                    description: "Contact Id when the order number and email match an existing order; empty when they do not"
+                    complex_data_type_name: "lightning__recordIdType"
+                    filter_from_agent: True
+
+        get_order_status:
+            description: "Get order status for the verified customer, optionally for one order number"
+            target: "apex://GetOrderStatus"
+            inputs:
+                verifiedContactId: object
+                    description: "Contact Id returned by VerifyIdentity. Must only be bound from the stored verified_contact_id variable, never from conversation text."
+                    complex_data_type_name: "lightning__recordIdType"
+                    is_required: True
+                orderNumber: string
+                    description: "Optional order number. When omitted, the customer's recent orders are listed instead."
+                    is_required: False
+            outputs:
+                found: boolean
+                    description: "Whether any matching order(s) were found"
+                    filter_from_agent: True
+                orders: list[object]
+                    description: "Matching order(s): orderNumber, status, estimatedDeliveryDate, itemsSummary"
+                    complex_data_type_name: "@apexClassType/c__GetOrderStatus$OrderResult"
+                    filter_from_agent: False
+
+    reasoning:
+        instructions: ->
+            if @variables.verified_contact_id is None:
+                | Before sharing any order information, you need both the
+                  order number and the email address associated with that
+                  order. If you don't have both yet, ask the customer for
+                  whichever is missing. As soon as you have both values —
+                  whether the customer gave them together in one message or
+                  you collected them across turns — call verify_identity
+                  immediately, in that same turn, with both values. Do not
+                  respond with an acknowledgment like "I am checking" or
+                  "one moment" without actually calling verify_identity in
+                  that same turn; a bare acknowledgment is never an
+                  acceptable response once both values are available.
+                  Calling verify_identity successfully, with no technical
+                  error, does not by itself mean the customer is verified —
+                  the only thing that counts is whether the call actually
+                  returned a verifiedContactId. After calling it, check for
+                  that specifically: if it did not return a
+                  verifiedContactId, that is a failed verification even
+                  though the call itself succeeded, and you must treat it
+                  exactly the same as any other failed verification.
+                  Whenever verification fails for any reason, tell them
+                  only that you couldn't verify that information with the
+                  order number and email provided, and invite them to
+                  double-check and try again. Never say or imply that they
+                  are verified, and never say whether the order exists,
+                  whether the email was wrong, or whether the order belongs
+                  to someone else — all three cases must look identical to
+                  the customer.
+            else:
+                | The customer's identity is verified. Use get_order_status
+                  to answer their question — ask for an order number if they
+                  want one specific order, or call it without an order
+                  number to list their recent orders. Only report status,
+                  estimated delivery date, and items using exactly what the
+                  action returns. Never invent order details.
+
+        actions:
+            verify: @actions.verify_identity
+                description: "Verify identity with order number and email"
+                with orderNumber = ...
+                with email = ...
+                set @variables.verified_contact_id = @outputs.verifiedContactId
+                available when @variables.verified_contact_id == None
+
+            check_status: @actions.get_order_status
+                description: "Look up order status for the verified customer"
+                with verifiedContactId = @variables.verified_contact_id
+                with orderNumber = ...
+                available when @variables.verified_contact_id != None
+
+            to_product_inquiry: @utils.transition to @subagent.product_inquiry
+                description: "Switch to help with a product question instead"
